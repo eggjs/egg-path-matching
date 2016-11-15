@@ -4,7 +4,8 @@
   "description": "match or ignore url path",
   "main": "index.js",
   "scripts": {
-    "test": "egg-bin test --require intelli-espower-loader"
+    "test": "egg-bin test --require intelli-espower-loader",
+    "autod": "autod"
   },
   "keywords": [
     "url",
@@ -22,13 +23,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "egg-ci": "^1.1.0",
     "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
-    "autod": "2",
+    "autod": "^2.7.1",
     "egg-bin": "^1.7.0",
-    "eslint": "^3.10.0",
+    "eslint": "^3.10.1",
     "eslint-config-egg": "^3.2.0",
     "intelli-espower-loader": "^1.0.1",
     "power-assert": "^1.4.2"
