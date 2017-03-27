@@ -5,12 +5,12 @@ egg-path-matching
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-[npm-image]: https://img.shields.io/npm/v/egg-url-matching.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/egg-url-matching
-[travis-image]: https://img.shields.io/travis/eggjs/egg-url-matching.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs/egg-url-matching
-[coveralls-image]: https://img.shields.io/coveralls/eggjs/egg-url-matching.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/eggjs/egg-url-matching?branch=master
+[npm-image]: https://img.shields.io/npm/v/egg-path-matching.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/egg-path-matching
+[travis-image]: https://img.shields.io/travis/eggjs/egg-path-matching.svg?style=flat-square
+[travis-url]: https://travis-ci.org/eggjs/egg-path-matching
+[coveralls-image]: https://img.shields.io/coveralls/eggjs/egg-path-matching.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/eggjs/egg-path-matching?branch=master
 
 ## Installation
 
