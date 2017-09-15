@@ -38,6 +38,16 @@ describe('egg-path-matching', () => {
       assert(fn({ path: '/v1/api1' }) === false);
     });
 
+    it('support global regexp', () => {
+      const fn = match({ match: /^\/api/g });
+      assert(fn({ path: '/api/hello' }) === true);
+      assert(fn({ path: '/api/' }) === true);
+      assert(fn({ path: '/api' }) === true);
+      assert(fn({ path: '/api1/hello' }) === true);
+      assert(fn({ path: '/api1' }) === true);
+      assert(fn({ path: '/v1/api1' }) === false);
+    });
+
     it('support function', () => {
       const fn = match({
         match: ctx => ctx.path.startsWith('/api'),
@@ -77,6 +87,16 @@ describe('egg-path-matching', () => {
 
     it('support regexp', () => {
       const fn = match({ ignore: /^\/api/ });
+      assert(fn({ path: '/api/hello' }) === false);
+      assert(fn({ path: '/api/' }) === false);
+      assert(fn({ path: '/api' }) === false);
+      assert(fn({ path: '/api1/hello' }) === false);
+      assert(fn({ path: '/api1' }) === false);
+      assert(fn({ path: '/v1/api1' }) === true);
+    });
+
+    it('support global regexp', () => {
+      const fn = match({ ignore: /^\/api/g });
       assert(fn({ path: '/api/hello' }) === false);
       assert(fn({ path: '/api/' }) === false);
       assert(fn({ path: '/api' }) === false);

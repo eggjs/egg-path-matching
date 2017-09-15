@@ -1,6 +1,6 @@
 {
   "name": "egg-path-matching",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "match or ignore url path",
   "main": "index.js",
   "scripts": {
