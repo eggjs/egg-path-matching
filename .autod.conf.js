@@ -8,6 +8,9 @@ module.exports = {
     'egg-bin',
     'eslint',
     'eslint-config-egg',
-    'intelli-espower-loader',
+  ],
+  semver: [
+    'path-to-regexp@1',
+    'egg-bin@1',
   ],
 };
