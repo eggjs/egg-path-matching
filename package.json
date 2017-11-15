@@ -3,11 +3,14 @@
   "version": "1.0.1",
   "description": "match or ignore url path",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test": "egg-bin test --require intelli-espower-loader",
+    "test": "egg-bin test",
     "autod": "autod",
-    "cov": "egg-bin cov --require intelli-espower-loader",
-    "lint": "eslint index.js test",
+    "cov": "egg-bin cov",
+    "lint": "eslint *.js test",
     "ci": "npm run lint && npm run cov"
   },
   "keywords": [
@@ -29,17 +32,18 @@
     "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
-    "autod": "^2.7.1",
-    "egg-bin": "^1.7.0",
-    "eslint": "^3.10.1",
-    "eslint-config-egg": "^3.2.0",
+    "autod": "^3.0.1",
+    "egg-bin": "^1.11.1",
+    "egg-ci": "^1.8.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^5.1.1",
     "intelli-espower-loader": "^1.0.1",
-    "power-assert": "^1.4.2"
+    "power-assert": "^1.4.4"
   },
   "engine": {
-    "node": ">=4"
+    "node": ">= 4.0.0"
   },
   "ci": {
-    "version": "4,5,6"
+    "version": "4, 6, 8, 9"
   }
 }
