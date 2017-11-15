@@ -18,9 +18,15 @@ module.exports = function(options) {
 function toPathMatch(pattern) {
   if (typeof pattern === 'string') {
     const reg = pathToRegexp(pattern, [], { end: false });
-    return ctx => !!ctx.path.match(reg);
+    if (reg.global) reg.lastIndex = 0;
+    return ctx => reg.test(ctx.path);
   }
-  if (pattern instanceof RegExp) return ctx => !!ctx.path.match(pattern);
+  if (pattern instanceof RegExp) {
+    return ctx => {
+      if (pattern.global) pattern.lastIndex = 0;
+      return pattern.test(ctx.path);
+    };
+  }
   if (typeof pattern === 'function') return pattern;
   if (Array.isArray(pattern)) {
     const matchs = pattern.map(item => toPathMatch(item));
