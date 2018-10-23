@@ -49,4 +49,4 @@ assert(match('/api') === true);
 
 ### License
 
-MIT
+[MIT](LICENSE)
