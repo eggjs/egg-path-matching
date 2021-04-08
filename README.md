@@ -35,9 +35,9 @@ const options = {
 };
 
 const match = pathMatching(options);
-assert(match('/api') === true);
-assert(match('/api/hello') === true);
-assert(match('/api') === true);
+assert(match({ path: '/api' }) === true);
+assert(match({ path: '/api/hello' }) === true);
+assert(match({ path: '/api' }) === true);
 ```
 
 ### options
