@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "test": "egg-bin test",
-    "autod": "autod",
     "cov": "egg-bin cov",
     "lint": "eslint *.js test",
-    "ci": "npm run lint && npm run cov"
+    "ci": "npm run lint && npm run cov",
+    "contributor": "git-contributor"
   },
   "keywords": [
     "url",
@@ -32,21 +32,12 @@
     "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
-    "egg-bin": "^1.11.1",
-    "egg-ci": "^1.8.0",
-    "eslint": "^4.19.1",
-    "eslint-config-egg": "^5.1.1",
-    "intelli-espower-loader": "^1.0.1",
-    "power-assert": "^1.6.1"
+    "egg-bin": "^6.5.2",
+    "eslint": "^8.55.0",
+    "eslint-config-egg": "^13.0.0",
+    "git-contributor": "^2.1.5"
   },
   "engine": {
     "node": ">= 4.0.0"
-  },
-  "ci": {
-    "version": "4, 6, 8, 10",
-    "license": {
-      "year": 2016
-    }
   }
 }
