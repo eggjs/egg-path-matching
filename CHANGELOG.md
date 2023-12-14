@@ -1,3 +1,11 @@
+# Changelog
+
+## [1.1.0](https://github.com/eggjs/egg-path-matching/compare/v1.0.1...v1.1.0) (2023-12-14)
+
+
+### Features
+
+* use github action and auto release ([#6](https://github.com/eggjs/egg-path-matching/issues/6)) ([1eb34da](https://github.com/eggjs/egg-path-matching/commit/1eb34da16f9676737bbc1fd95fc73ae26e8e5b39))
 
 1.0.1 / 2017-11-15
 ==================
