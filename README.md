@@ -1,21 +1,16 @@
-egg-path-matching
----------------
+# egg-path-matching
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
+[![CI](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs.yml/badge.svg)](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs.yml)
+[![Test coverage](https://img.shields.io/codecov/c/github/eggjs/egg-path-matching.svg?style=flat-square)](https://codecov.io/gh/eggjs/egg-path-matching)
 
 [npm-image]: https://img.shields.io/npm/v/egg-path-matching.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg-path-matching
-[travis-image]: https://img.shields.io/travis/eggjs/egg-path-matching.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs/egg-path-matching
-[coveralls-image]: https://img.shields.io/coveralls/eggjs/egg-path-matching.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/eggjs/egg-path-matching?branch=master
 
 ## Installation
 
 ```bash
-$ npm install egg-path-matching
+npm install egg-path-matching
 ```
 
 ## Usage
@@ -50,6 +45,7 @@ assert(match({ path: '/api' }) === true);
 ### License
 
 [MIT](LICENSE)
+
 <!-- GITCONTRIBUTOR_START -->
 
 ## Contributors
