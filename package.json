@@ -2,19 +2,16 @@
   "name": "egg-path-matching",
   "version": "1.1.0",
   "engine": {
-    "node": ">= 4.0.0"
+    "node": ">= 18.19.0"
   },
   "description": "match or ignore url path",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
   "scripts": {
-    "test": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint *.js test",
-    "ci": "npm run lint && npm run cov",
-    "contributor": "git-contributor"
+    "lint": "eslint src test",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "ci": "npm run lint && egg-bin cov && npm run prepublishOnly",
+    "contributor": "git-contributor",
+    "prepublishOnly": "tshy && tshy-after"
   },
   "keywords": [
     "url",
@@ -32,12 +29,46 @@
   },
   "license": "MIT",
   "dependencies": {
-    "path-to-regexp": "^1.7.0"
+    "path-to-regexp": "^6.2.2"
   },
   "devDependencies": {
-    "egg-bin": "^6.5.2",
-    "eslint": "^8.55.0",
-    "eslint-config-egg": "12",
-    "git-contributor": "^2.1.5"
-  }
+    "@eggjs/tsconfig": "1",
+    "@types/mocha": "10",
+    "@types/node": "20",
+    "egg-bin": "6",
+    "eslint": "8",
+    "eslint-config-egg": "13",
+    "git-contributor": "2",
+    "tshy": "1",
+    "tshy-after": "1",
+    "typescript": "5"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "tshy": {
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "source": "./src/index.ts",
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts"
 }

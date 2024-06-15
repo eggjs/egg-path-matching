@@ -1,21 +1,19 @@
-'use strict';
-
-const assert = require('assert');
-const match = require('..');
+import { strict as assert } from 'node:assert';
+import { pathMatching as match } from '../src/index.js';
 
 describe('egg-path-matching', () => {
   it('options.match and options.ignore both present should throw', () => {
     try {
       match({ ignore: '/api', match: '/dashboard' });
       throw new Error('should not exec');
-    } catch (e) {
-      assert(e.message === 'options.match and options.ignore can not both present');
+    } catch (e: any) {
+      assert.equal(e.message, 'options.match and options.ignore can not both present');
     }
   });
 
   it('options.match and options.ignore both not present should always return true', () => {
     const fn = match({});
-    assert(fn() === true);
+    assert(fn({}) === true);
   });
 
   describe('match', () => {
