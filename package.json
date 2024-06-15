@@ -1,6 +1,9 @@
 {
   "name": "egg-path-matching",
   "version": "1.1.0",
+  "engine": {
+    "node": ">= 4.0.0"
+  },
   "description": "match or ignore url path",
   "main": "index.js",
   "files": [
@@ -36,8 +39,5 @@
     "eslint": "^8.55.0",
     "eslint-config-egg": "^13.0.0",
     "git-contributor": "^2.1.5"
-  },
-  "engine": {
-    "node": ">= 4.0.0"
   }
 }
