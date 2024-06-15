@@ -22,7 +22,8 @@ npm install egg-path-matching
 ## Usage
 
 ```js
-const pathMatching = require('egg-path-matching');
+import { pathMatching } from 'egg-path-matching';
+
 const options = {
   ignore: '/api', // string will use parsed by path-to-regexp
   // support regexp
@@ -36,17 +37,18 @@ const options = {
 };
 
 const match = pathMatching(options);
-assert(match({ path: '/api' }) === true);
-assert(match({ path: '/api/hello' }) === true);
-assert(match({ path: '/api' }) === true);
+assert.equal(match({ path: '/api' }), true);
+assert.equal(match({ path: '/api/hello' }), true);
+assert.equal(match({ path: '/api' }), true);
 ```
 
 ### options
 
-- `match` {String | RegExp | Function | Array} - if request path hit `options.match`, will return true, otherwise will return false.
-- `ignore` {String | RegExp | Function | Array} - if request path hit `options.ignore`, will return false, otherwise will return true.
+- `match` {String | RegExp | Function | Array} - if request path hit `options.match`, will return `true`, otherwise will return `false`.
+- `ignore` {String | RegExp | Function | Array} - if request path hit `options.ignore`, will return `false`, otherwise will return `true`.
 
-`ignore` and `match` can not both be presented. and if neither `ignore` nor `match` presented, the new function will always return true.
+`ignore` and `match` can not both be presented.
+and if neither `ignore` nor `match` presented, the new function will always return `true`.
 
 ### License
 

@@ -16,3 +16,5 @@ dump.rdb
 .DS_Store
 
 test.js
+.tshy*
+dist
