@@ -1,7 +1,7 @@
 # egg-path-matching
 
 [![NPM version][npm-image]][npm-url]
-[![CI](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs.yml/badge.svg)](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs.yml)
+[![CI](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs-1.x.yml/badge.svg)](https://github.com/eggjs/egg-path-matching/actions/workflows/nodejs-1.x.yml)
 [![Test coverage](https://img.shields.io/codecov/c/github/eggjs/egg-path-matching.svg?style=flat-square)](https://codecov.io/gh/eggjs/egg-path-matching)
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-npm install egg-path-matching
+npm install egg-path-matching@1
 ```
 
 ## Usage
