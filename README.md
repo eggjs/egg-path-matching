@@ -21,7 +21,7 @@ npm install egg-path-matching
 
 ## Usage
 
-```js
+```ts
 import { pathMatching } from 'egg-path-matching';
 
 const options = {
