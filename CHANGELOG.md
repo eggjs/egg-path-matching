@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://github.com/eggjs/egg-path-matching/compare/v1.1.0...v2.0.0) (2024-06-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop Node.js < 18.19.0 support
+
+https://github.com/eggjs/egg/issues/5257
+
+### Features
+
+* support cjs and esm both ([#8](https://github.com/eggjs/egg-path-matching/issues/8)) ([a092108](https://github.com/eggjs/egg-path-matching/commit/a092108f1552296ea7ba060300bf580f3a6a5d2e))
+
 ## [1.1.0](https://github.com/eggjs/egg-path-matching/compare/v1.0.1...v1.1.0) (2023-12-14)
 
 
