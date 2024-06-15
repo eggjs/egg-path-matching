@@ -37,7 +37,7 @@
   "devDependencies": {
     "egg-bin": "^6.5.2",
     "eslint": "^8.55.0",
-    "eslint-config-egg": "^13.0.0",
+    "eslint-config-egg": "12",
     "git-contributor": "^2.1.5"
   }
 }
