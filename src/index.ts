@@ -28,9 +28,9 @@ export function pathMatching(options: PathMatchingOptions): PathMatchingFun {
 
 function toPathMatch(pattern: PathMatchingPattern): PathMatchingFun {
   if (typeof pattern === 'string') {
-    const reg = pathToRegexp(pattern, [], { end: false });
-    if (reg.global) reg.lastIndex = 0;
-    return ctx => reg.test(ctx.path);
+    const { regexp } = pathToRegexp(pattern, { end: false });
+    if (regexp.global) regexp.lastIndex = 0;
+    return ctx => regexp.test(ctx.path);
   }
   if (pattern instanceof RegExp) {
     return ctx => {
