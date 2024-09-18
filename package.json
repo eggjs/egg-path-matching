@@ -10,7 +10,6 @@
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "ci": "npm run lint && egg-bin cov && npm run prepublishOnly",
-    "contributor": "git-contributor",
     "prepublishOnly": "tshy && tshy-after"
   },
   "keywords": [
@@ -29,7 +28,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "path-to-regexp": "^6.2.2"
+    "path-to-regexp": "^6.3.0"
   },
   "devDependencies": {
     "@eggjs/tsconfig": "1",
@@ -38,7 +37,6 @@
     "egg-bin": "6",
     "eslint": "8",
     "eslint-config-egg": "13",
-    "git-contributor": "2",
     "tshy": "1",
     "tshy-after": "1",
     "typescript": "5"
