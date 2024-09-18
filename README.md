@@ -56,6 +56,6 @@ and if neither `ignore` nor `match` presented, the new function will always retu
 
 ## Contributors
 
-[![Contributors](https://contrib.rocks/image?repo=node-modules/urllib)](https://github.com/node-modules/urllib/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=eggjs/egg-path-matching)](https://github.com/eggjs/egg-path-matching/graphs/contributors)
 
 Made with [contributors-img](https://contrib.rocks).
