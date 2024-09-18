@@ -1,6 +1,6 @@
 {
   "name": "egg-path-matching",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "engine": {
     "node": ">= 18.19.0"
   },

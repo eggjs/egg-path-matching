@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/eggjs/egg-path-matching/compare/v2.0.0...v2.1.0) (2024-09-18)
+
+
+### Features
+
+* use path-to-regexp@6.3.0 ([#10](https://github.com/eggjs/egg-path-matching/issues/10)) ([b059f04](https://github.com/eggjs/egg-path-matching/commit/b059f04da680010b6cd506a4950bbd120cc78e95))
+
 ## [2.0.0](https://github.com/eggjs/egg-path-matching/compare/v1.1.0...v2.0.0) (2024-06-15)
 
 
