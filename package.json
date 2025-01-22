@@ -10,11 +10,12 @@
     "index.js"
   ],
   "scripts": {
+    "pretest": "npm run lint -- --fix",
     "test": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint *.js test",
-    "ci": "npm run lint && npm run cov",
-    "contributor": "git-contributor"
+    "preci": "npm run lint",
+    "ci": "npm run cov"
   },
   "keywords": [
     "url",
@@ -32,12 +33,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "path-to-regexp": "^1.7.0"
+    "path-to-regexp": "^1.9.0"
   },
   "devDependencies": {
     "egg-bin": "^6.5.2",
     "eslint": "^8.55.0",
     "eslint-config-egg": "12",
-    "git-contributor": "^2.1.5"
+    "path-to-regexp-v8": "npm:path-to-regexp@8"
   }
 }
