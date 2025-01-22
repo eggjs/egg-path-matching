@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/eggjs/egg-path-matching/compare/v1.1.0...v1.2.0) (2025-01-22)
+
+
+### Features
+
+* support custom pathToRegexpModule ([#11](https://github.com/eggjs/egg-path-matching/issues/11)) ([694acc8](https://github.com/eggjs/egg-path-matching/commit/694acc854cad6b3fc99632100b5e37dae552bd48))
+
 ## [1.1.0](https://github.com/eggjs/egg-path-matching/compare/v1.0.1...v1.1.0) (2023-12-14)
 
 
