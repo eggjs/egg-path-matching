@@ -1,7 +1,7 @@
 name: Release for 1.x
 on:
   push:
-    branches: [ master ]
+    branches: [ 1.x ]
 
 jobs:
   release:
