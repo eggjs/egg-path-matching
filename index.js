@@ -1,5 +1,3 @@
-const pathToRegexp = require('path-to-regexp');
-
 module.exports = function(options) {
   options = options || {};
   if (options.match && options.ignore) {
@@ -9,9 +7,10 @@ module.exports = function(options) {
     return () => true;
   }
 
-  const convertPathToRegexp = options.pathToRegexp || pathToRegexp;
+  const pathToRegexpModule = options.pathToRegexpModule || require('path-to-regexp');
+  const pathToRegexp = pathToRegexpModule.pathToRegexp || pathToRegexpModule;
   const matchFn = options.match ?
-    toPathMatch(options.match, convertPathToRegexp) : toPathMatch(options.ignore, convertPathToRegexp);
+    toPathMatch(options.match, pathToRegexp) : toPathMatch(options.ignore, pathToRegexp);
 
   return function pathMatch(ctx) {
     const matched = matchFn(ctx);
@@ -19,9 +18,9 @@ module.exports = function(options) {
   };
 };
 
-function toPathMatch(pattern, convertPathToRegexp) {
+function toPathMatch(pattern, pathToRegexp) {
   if (typeof pattern === 'string') {
-    let reg = convertPathToRegexp(pattern, [], { end: false });
+    let reg = pathToRegexp(pattern, [], { end: false });
     if (reg.regexp) {
       // support path-to-regexp@8
       // => const { regexp, keys } = pathToRegexp("/foo/:bar");
@@ -47,7 +46,7 @@ function toPathMatch(pattern, convertPathToRegexp) {
   }
 
   if (Array.isArray(pattern)) {
-    const matchs = pattern.map(item => toPathMatch(item, convertPathToRegexp));
+    const matchs = pattern.map(item => toPathMatch(item, pathToRegexp));
     return ctx => matchs.some(match => match(ctx));
   }
 

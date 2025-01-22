@@ -26,8 +26,8 @@ describe('egg-path-matching', () => {
       assert(fn({ path: '/api1' }) === false);
     });
 
-    it('support custom pathToRegexp', () => {
-      const fn = match({ match: '/api{/*path}', pathToRegexp: require('path-to-regexp-v8').pathToRegexp });
+    it('support custom pathToRegexpModule', () => {
+      const fn = match({ match: '/api{/*path}', pathToRegexpModule: require('path-to-regexp-v8') });
       assert(fn({ path: '/api/hello' }) === true);
       assert(fn({ path: '/api/' }) === true);
       assert(fn({ path: '/api' }) === true);

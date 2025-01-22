@@ -37,7 +37,7 @@ const options = {
   // support match or ignore
   match: '/api',
   // custom path-to-regexp module, default is `path-to-regexp@1`
-  // pathToRegexp: require('path-to-regexp'),
+  // pathToRegexpModule: require('path-to-regexp'),
 };
 
 const match = pathMatching(options);
