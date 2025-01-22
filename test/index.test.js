@@ -1,5 +1,3 @@
-'use strict';
-
 const assert = require('assert');
 const match = require('..');
 
@@ -21,6 +19,15 @@ describe('egg-path-matching', () => {
   describe('match', () => {
     it('support string', () => {
       const fn = match({ match: '/api' });
+      assert(fn({ path: '/api/hello' }) === true);
+      assert(fn({ path: '/api/' }) === true);
+      assert(fn({ path: '/api' }) === true);
+      assert(fn({ path: '/api1/hello' }) === false);
+      assert(fn({ path: '/api1' }) === false);
+    });
+
+    it('support custom pathToRegexpModule', () => {
+      const fn = match({ match: '/api{/*path}', pathToRegexpModule: require('path-to-regexp-v8') });
       assert(fn({ path: '/api/hello' }) === true);
       assert(fn({ path: '/api/' }) === true);
       assert(fn({ path: '/api' }) === true);

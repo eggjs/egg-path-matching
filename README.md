@@ -5,6 +5,9 @@
 [![Test coverage](https://img.shields.io/codecov/c/github/eggjs/egg-path-matching.svg?style=flat-square)](https://codecov.io/gh/eggjs/egg-path-matching)
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
+[![Node.js Version](https://img.shields.io/node/v/egg-path-matching.svg?style=flat)](https://nodejs.org/en/download/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/eggjs/egg-path-matching)
 
 [npm-image]: https://img.shields.io/npm/v/egg-path-matching.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg-path-matching
@@ -33,6 +36,8 @@ const options = {
   ignore: [ ctx => ctx.path.startsWith('/api'), /^\/foo$/, '/bar'],
   // support match or ignore
   match: '/api',
+  // custom path-to-regexp module, default is `path-to-regexp@1`
+  // pathToRegexpModule: require('path-to-regexp'),
 };
 
 const match = pathMatching(options);
@@ -52,14 +57,8 @@ assert(match({ path: '/api' }) === true);
 
 [MIT](LICENSE)
 
-<!-- GITCONTRIBUTOR_START -->
-
 ## Contributors
 
-|[<img src="https://avatars.githubusercontent.com/u/985607?v=4" width="100px;"/><br/><sub><b>dead-horse</b></sub>](https://github.com/dead-horse)<br/>|[<img src="https://avatars.githubusercontent.com/u/156269?v=4" width="100px;"/><br/><sub><b>fengmk2</b></sub>](https://github.com/fengmk2)<br/>|[<img src="https://avatars.githubusercontent.com/u/7903541?v=4" width="100px;"/><br/><sub><b>releasethecow</b></sub>](https://github.com/releasethecow)<br/>|[<img src="https://avatars.githubusercontent.com/u/227713?v=4" width="100px;"/><br/><sub><b>atian25</b></sub>](https://github.com/atian25)<br/>|[<img src="https://avatars.githubusercontent.com/u/5102113?v=4" width="100px;"/><br/><sub><b>xyeric</b></sub>](https://github.com/xyeric)<br/>|
-| :---: | :---: | :---: | :---: | :---: |
+[![Contributors](https://contrib.rocks/image?repo=eggjs/egg-path-matching)](https://github.com/eggjs/egg-path-matching/graphs/contributors)
 
-
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Thu Dec 14 2023 17:20:14 GMT+0800`.
-
-<!-- GITCONTRIBUTOR_END -->
+Made with [contributors-img](https://contrib.rocks).
