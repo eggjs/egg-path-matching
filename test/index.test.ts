@@ -26,6 +26,16 @@ describe('egg-path-matching', () => {
       assert(fn({ path: '/api1' }) === false);
     });
 
+    it('support custom pathToRegexpModule', async () => {
+      const pathToRegexpV8 = await import('path-to-regexp-v8');
+      const fn = match({ match: '/api{/*path}', pathToRegexpModule: pathToRegexpV8 });
+      assert(fn({ path: '/api/hello' }) === true);
+      assert(fn({ path: '/api/' }) === true);
+      assert(fn({ path: '/api' }) === true);
+      assert(fn({ path: '/api1/hello' }) === false);
+      assert(fn({ path: '/api1' }) === false);
+    });
+
     it('support regexp', () => {
       const fn = match({ match: /^\/api/ });
       assert(fn({ path: '/api/hello' }) === true);
