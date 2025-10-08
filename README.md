@@ -34,6 +34,8 @@ const options = {
   ignore: [ ctx => ctx.path.startsWith('/api'), /^\/foo$/, '/bar'],
   // support match or ignore
   match: '/api',
+  // custom path-to-regexp module, default is `path-to-regexp@6`
+  // pathToRegexpModule: customPathToRegexp,
 };
 
 const match = pathMatching(options);
@@ -46,6 +48,7 @@ assert.equal(match({ path: '/api' }), true);
 
 - `match` {String | RegExp | Function | Array} - if request path hit `options.match`, will return `true`, otherwise will return `false`.
 - `ignore` {String | RegExp | Function | Array} - if request path hit `options.ignore`, will return `false`, otherwise will return `true`.
+- `pathToRegexpModule` {Object | Function} - custom path-to-regexp module. Default is `path-to-regexp@6`. Supports both `path-to-regexp@6` and `path-to-regexp@8+` formats.
 
 `ignore` and `match` can not both be presented.
 and if neither `ignore` nor `match` presented, the new function will always return `true`.

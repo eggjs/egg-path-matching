@@ -7,6 +7,7 @@ export type PathMatchingPattern = string | RegExp | PathMatchingFun | (string | 
 export interface PathMatchingOptions {
   ignore?: PathMatchingPattern;
   match?: PathMatchingPattern;
+  pathToRegexpModule?: any;
 }
 
 export function pathMatching(options: PathMatchingOptions): PathMatchingFun {
@@ -18,7 +19,9 @@ export function pathMatching(options: PathMatchingOptions): PathMatchingFun {
     return () => true;
   }
 
-  const matchFn = options.match ? toPathMatch(options.match) : toPathMatch(options.ignore!);
+  const pathToRegexpModule = options.pathToRegexpModule || { pathToRegexp };
+  const pathToRegexpFn = pathToRegexpModule.pathToRegexp || pathToRegexpModule;
+  const matchFn = options.match ? toPathMatch(options.match, pathToRegexpFn) : toPathMatch(options.ignore!, pathToRegexpFn);
 
   return function pathMatch(ctx: any) {
     const matched = matchFn(ctx);
@@ -26,9 +29,14 @@ export function pathMatching(options: PathMatchingOptions): PathMatchingFun {
   };
 }
 
-function toPathMatch(pattern: PathMatchingPattern): PathMatchingFun {
+function toPathMatch(pattern: PathMatchingPattern, pathToRegexpFn: any): PathMatchingFun {
   if (typeof pattern === 'string') {
-    const reg = pathToRegexp(pattern, [], { end: false });
+    let reg = pathToRegexpFn(pattern, [], { end: false });
+    if (reg.regexp) {
+      // support path-to-regexp@8
+      // => const { regexp, keys } = pathToRegexp("/foo/:bar");
+      reg = reg.regexp;
+    }
     if (reg.global) reg.lastIndex = 0;
     return ctx => reg.test(ctx.path);
   }
@@ -42,7 +50,7 @@ function toPathMatch(pattern: PathMatchingPattern): PathMatchingFun {
   }
   if (typeof pattern === 'function') return pattern;
   if (Array.isArray(pattern)) {
-    const matchFns = pattern.map(item => toPathMatch(item));
+    const matchFns = pattern.map(item => toPathMatch(item, pathToRegexpFn));
     return ctx => matchFns.some(matchFn => matchFn(ctx));
   }
   throw new Error(`match/ignore pattern must be RegExp, Array or String, but got ${pattern}`);

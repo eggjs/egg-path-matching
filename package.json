@@ -37,6 +37,7 @@
     "egg-bin": "6",
     "eslint": "8",
     "eslint-config-egg": "13",
+    "path-to-regexp-v8": "npm:path-to-regexp@^8.3.0",
     "tshy": "1",
     "tshy-after": "1",
     "typescript": "5"
